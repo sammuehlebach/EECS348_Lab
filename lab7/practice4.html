@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2
+        }
+    </style>
+</head>
+<body>
+    <h1>PHP Multiplication Table (Exercise 4)</h1>
+    <form method="post" action="">
+        <input type = "index" name = "number" required>
+        <button type="submit">Generate Table</button>
+    </form>
+
+    <?php
+    $number = intval($_POST["number"]);
+    echo "<table>";
+    echo "<tr><th></th>";
+    for ($i = 1; $i <= $number; $i++) {
+        echo "<th>$i</th>";
+    }
+    echo "</tr>";
+    for ($row = 1; $row <= $number; $row++) {
+        echo "<tr><th>$row</th>";
+        for ($col = 1; $col <= $number; $col++) {
+            echo "<td>" . ($row * $col) . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+    ?>
+</body>
+</html>
