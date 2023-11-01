@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>JavaScript Word Verification</h1>
+    First Password <input type = "text" id="password1" value>
+    <br>
+    Second Password <input type = "text" id="password2" value>
+    <br>
+    <button onclick="validatePasswords()">Validate Your Passwords</button>
+    <script>
+        function validatePasswords() {
+            const password1 = document.getElementById('password1').value;
+            const password2 = document.getElementById('password2').value;
+
+            if(password1.length < 8) {
+                alert('Password must be at least 8 characters.');
+            } else if (password1 !== password2) {
+                alert('Passwords are not matching');
+            } else {
+                alert('Passwords are matched. Success!');
+            }
+        }
+    </script>
+</body>

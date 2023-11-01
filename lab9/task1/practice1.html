@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>CSS Font Control</h1>
+    <style>
+        #paragraph {
+            border-style: solid;
+            border-width: 5px;
+        }
+
+        input {
+            margin-top: 5px;
+        }
+    </style>
+    <div id  ="paragraph">Paragraph to be altered. </div>
+    Border R(0-255):<input type="text" id="Red_Border" value>
+    <br>
+    Border G(0-255): <input type="text" id="Green_Border" value>
+    <br>
+    Border B(0-255):<input type="text" id="Blue_Border" value>
+    <br>
+    Border Width:<input type="text" id="Border_width" value>
+    <br>
+    Background R(0-255):<input type="text" id="Red_Background" value>
+    <br>
+    Background G(0-255):<input type="text" id="Green_Background" value>
+    <br>
+    Background B(0-255):<input type="text" id="Blue_Background" value>
+    <br>
+    <button onclick="changeColor()">Change the color!</button>
+    <script>
+        function changeColor() {
+            const paragraph = document.getElementById('paragraph');
+            const redBorder = document.getElementById('Red_Border').value;
+            const greenBorder = document.getElementById('Green_Border').value;
+            const blueBorder = document.getElementById('Blue_Border').value;
+            const borderWidth = document.getElementById('Border_width').value;
+            const redBackground = document.getElementById('Red_Background').value;
+            const greenBackground = document.getElementById('Green_Background').value;
+            const blueBackground = document.getElementById('Blue_Background').value;
+    
+            paragraph.style.borderColor = `rgb(${redBorder}, ${greenBorder}, ${blueBorder})`;
+            paragraph.style.borderWidth = `${borderWidth}px`;
+            paragraph.style.backgroundColor = `rgb(${redBackground}, ${greenBackground}, ${blueBackground})`;
+        }
+    </script>
+    
+</body>
